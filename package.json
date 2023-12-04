@@ -1,0 +1,27 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "# Image-carousel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Estercade/Weather-App.git#main"
+  },
+  "author": "Estercade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Estercade/Weather-App/issues"
+  },
+  "homepage": "https://github.com/Estercade/Weather-App/tree/main#readme",
+  "dependencies": {
+    "webpack": "^5.89.0"
+  },
+  "devDependencies": {
+    "style-loader": "^3.3.3"
+  }
+}
