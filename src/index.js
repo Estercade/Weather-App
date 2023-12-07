@@ -27,19 +27,37 @@ searchWrapper.append(searchBtn);
 
 async function getWeatherByZip(zip, country, appid) {
     try {
-        let locationData = await fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zip},${country}&appid=${appid}`, {
+        let locationData = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&appid=${appid}`, {
+            mode: 'cors'
+        });
+
+        let locationJSON = await locationData.json();
+        console.log(locationJSON.name);
+        console.log(locationJSON.main.temp_max);
+        console.log(locationJSON.main.temp_min);
+        console.log(locationJSON.weather[0].main);
+        console.log(locationJSON.weather[0].description);
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+
+
+async function getForecastByZip(zip, country, appid) {
+    try {
+        let locationData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zip},${country}&appid=${appid}`, {
             mode: 'cors'
         });
 
         let locationJSON = await locationData.json();
         console.log(locationJSON);
 
-        getWeatherByCoords(await locationJSON.lat, await locationJSON.lon, appid);
-
     }
-    catch(err) {
-        console.log(err);
+    catch(error) {
+        console.log(error);
     }
 }
 
 getWeatherByZip('10280', 'US', appid);
+getForecastByZip('10280', 'US', appid);
