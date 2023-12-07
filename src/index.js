@@ -46,7 +46,7 @@ function displayWeather(weatherJSON, units) {
 
     let tempUnits, windSpeedUnits;
 
-    if (units = 'metric') {
+    if (units == 'metric') {
         tempUnits = '&deg;C';
         windSpeedUnits = 'm/s';
     } else {
@@ -98,6 +98,8 @@ function displayWeather(weatherJSON, units) {
     currentWeatherWrapper.appendChild(currentWind);
 }
 
+getWeatherByZip('10280', 'US', 'metric', appid);
+
 async function getForecastByZip(zip, country, appid) {
     try {
         let weatherData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zip},${country}&appid=${appid}`, {
@@ -120,5 +122,4 @@ function convertDT(unixDT) {
     return [formattedDate, formattedTime];
 }
 
-getWeatherByZip('10280', 'US', 'metric', appid);
-getForecastByZip('10280', 'US', appid);
+// getForecastByZip('10280', 'US', appid);
