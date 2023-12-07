@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Estercade/Weather-App/tree/main#readme",
   "dependencies": {
+    "date-fns": "^2.30.0",
     "webpack": "^5.89.0"
   },
   "devDependencies": {
